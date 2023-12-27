@@ -98,9 +98,20 @@ function Card({
               </svg>
             </button>
             {!showInfo ? (
-              <button className="bg-primary/60 active:bg-primary absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 select-none rounded-lg px-[18px] py-2 text-xs font-bold uppercase leading-[14px] text-white group-hover:block">
-                Jugar ahora
-              </button>
+              <>
+                <button className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 select-none rounded-lg bg-primary/60 px-[18px] py-2 text-xs font-bold uppercase leading-[14px] text-white active:bg-primary group-hover:block">
+                  Jugar ahora
+                </button>
+                {info.moodBonus && (
+                  <button
+                    className={twclsx(
+                      'absolute bottom-2 right-2 z-30 rounded-md bg-[#010101CC] p-1',
+                    )}
+                  >
+                    🎁
+                  </button>
+                )}
+              </>
             ) : null}
             <div
               className={twclsx(
@@ -113,15 +124,15 @@ function Card({
               </h2>
               {showInfo ? (
                 <div className="flex flex-wrap gap-1">
-                  <div className="bg-primary/20 flex w-max space-x-1 rounded-md p-1 text-xs font-bold uppercase leading-[14px] text-white">
+                  <div className="flex w-max space-x-1 rounded-md bg-primary/20 p-1 text-xs font-bold uppercase leading-[14px] text-white">
                     <p>Version:</p>
                     <span>{info.version}</span>
                   </div>
-                  <div className="bg-primary/20 flex w-max space-x-1 rounded-md p-1 text-xs font-bold uppercase leading-[14px] text-white">
+                  <div className="flex w-max space-x-1 rounded-md bg-primary/20 p-1 text-xs font-bold uppercase leading-[14px] text-white">
                     <p>rtp:</p>
                     <span>{info.rtp}</span>
                   </div>
-                  <div className="bg-primary/20 flex w-max space-x-1 rounded-md p-1 text-xs font-bold uppercase leading-[14px] text-white">
+                  <div className="flex w-max space-x-1 rounded-md bg-primary/20 p-1 text-xs font-bold uppercase leading-[14px] text-white">
                     <p>votalidad</p>
                     <span>alta</span>
                   </div>
