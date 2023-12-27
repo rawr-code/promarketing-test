@@ -15,10 +15,11 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@assets/*": ["src/assets/*"],
       "@components": ["src/components/index.ts"],
       "@utils": ["src/utils/index.ts"],
       "@hooks": ["src/hooks/index.ts"],
-      "@models": ["src/models/index.ts"],
+      "@models": ["src/models/index.ts"]
     },
     "plugins": [
       {

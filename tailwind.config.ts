@@ -1,3 +1,4 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -8,10 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-robotoCondensed)', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        primary: '#FBBF24',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'card-hover-gradient':
+          'linear-gradient(0deg, #000000 4.5%, rgba(0, 0, 0, 0) 100%)',
       },
     },
   },

@@ -4,8 +4,9 @@ export interface Promarketing {
   info: Info
   name: string
   src: string
-  supplier: string
+  supplier: Supplier
 }
+export type Supplier = 'playtech' | 'evoplay' | 'pragmatic' | 'spinomenal'
 
 export interface Info {
   moodBonus: boolean
